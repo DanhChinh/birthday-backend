@@ -14,19 +14,7 @@ app.use('/api', authRoutes);
 
 const PORT = process.env.PORT || 5000;
 
-const db = require('./db'); // giả sử bạn có file db.js chứa kết nối
 
-app.get('/test', (req, res) => {
-    db.query('SELECT 1', (err) => {
-        if (err) {
-            console.error('❌ Lỗi kết nối DB:', err.message);
-            return res.status(500).json({ success: false, message: 'Không kết nối được database!' });
-        }
-
-        console.log('✅ API /api/log: Kết nối DB thành công lúc', new Date().toLocaleString());
-        res.json({ success: true, message: 'Đã kết nối DB & server thành công!' });
-    });
-});
 
 
 app.listen(PORT, '0.0.0.0', () => {
