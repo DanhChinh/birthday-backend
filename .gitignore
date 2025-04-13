@@ -1,0 +1,13 @@
+# Node modules
+node_modules/
+
+# Uploads (user-generated content)
+uploads/
+
+# Server logs
+logs.txt
+
+
+# Environment files
+.env
+
