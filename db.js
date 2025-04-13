@@ -1,6 +1,7 @@
 // db.js
 require('dotenv').config();
 const mysql = require('mysql2');
+console.log(`host: ${process.env.DB_HOST} \nuser: ${process.env.DB_USER} \npassword: ${process.env.DB_PASS} \ndatabase: ${process.env.DB_NAME}`)
 
 const db = mysql.createConnection({
     host: process.env.DB_HOST,
@@ -10,7 +11,6 @@ const db = mysql.createConnection({
     port:process.env.DB_PORT
 });
 
-console.log(`host: ${process.env.DB_HOST} \nuser: ${process.env.DB_USER} \npassword: ${process.env.DB_PASS} \ndatabase: ${process.env.DB_NAME}`)
 db.connect(err => {
     if (err) {
         console.error('❌ Kết nối MySQL thất bại:', err);
